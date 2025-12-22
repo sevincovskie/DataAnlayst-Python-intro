@@ -574,3 +574,204 @@ for name in students_high_score:
 # for name, score in scores.items():
 # if score == max_score:
 # top_students.append(name)
+
+
+# dictionary comphrension
+
+# 🔹 Task 1
+# Hər ədəd neçə dəfə təkrarlanır
+
+numbers = [2, 4, 2, 5, 4, 2]
+result = {n: numbers.count(n) for n in numbers}
+
+# 🔹 Task 2
+# Adların sayı
+
+names = ["Ali", "Veli", "Ali", "Aysel", "Veli", "Ali"]
+result = {name: names.count(name) for name in names}
+
+# 🔹 Task 3
+# Qiyməti 5-dən böyük məhsullar
+
+prices = {"pen": 2, "book": 10, "bag": 25}
+result = [k for k, v in prices.items() if v > 5]
+
+# 🔹 Task 4
+# Keçən tələbələr (≥60)
+
+scores = {"Ali": 55, "Veli": 72, "Aysel": 91}
+result = [name for name, score in scores.items() if score >= 60]
+
+# 🔹 Task 5
+# Hər hərfin sayı
+
+text = "success"
+result = {ch: text.count(ch) for ch in text}
+
+# 🔹 Task 6
+# Cüt / Tək
+
+numbers = [1, 2, 3, 4, 5]
+result = {n: ("even" if n % 2 == 0 else "odd") for n in numbers}
+
+# 🔹 Task 7
+# Orta bal
+
+students = {
+    "Ali": [70, 80, 90],
+    "Veli": [60, 65, 70],
+    "Aysel": [90, 95, 100]
+}
+
+result = {name: sum(scores)/len(scores) for name, scores in students.items()}
+
+# 🔹 Task 8
+# Sözləri uzunluğa görə qrupla
+
+words = ["apple", "bat", "banana", "car"]
+result = {len(w): [x for x in words if len(x) == len(w)] for w in words}
+
+# 🔹 Task 9
+# Stokda olmayanlar
+
+inventory = {"pen": 0, "book": 3, "eraser": 0, "bag": 5}
+result = [k for k, v in inventory.items() if v == 0]
+
+# 🔹 Task 10
+# Sözlərin sayı
+
+sentence = "this is a test this is a test"
+words = sentence.split()
+result = {w: words.count(w) for w in words}
+
+# 🔹 Task 11
+# Key ↔ Value dəyiş
+
+data = {"a": 1, "b": 2, "c": 3}
+result = {v: k for k, v in data.items()}
+
+# 🔹 Task 12
+# Email domain sayı
+
+emails = ["a@gmail.com", "b@yahoo.com", "c@gmail.com", "d@yahoo.com"]
+domains = [e.split("@")[1] for e in emails]
+result = {d: domains.count(d) for d in domains}
+
+# 🔹 Task 13
+# 18+ olanlar
+
+ages = {"Ali": 17, "Veli": 22, "Aysel": 18}
+result = [name for name, age in ages.items() if age >= 18]
+
+# 🔹 Task 14
+# Ədəd × 3
+
+numbers = [3, 6, 9, 12, 15]
+result = {n: n*3 for n in numbers}
+
+# 🔹 Task 15
+# Item sayı
+
+items = ["pen", "book", "pen", "pen", "book"]
+result = {item: items.count(item) for item in items}
+
+# 🔹 Task 16
+# Qiymətə görə qrupla
+
+students = [
+    {"name": "Ali", "grade": "A"},
+    {"name": "Veli", "grade": "B"},
+    {"name": "Aysel", "grade": "A"}
+]
+
+grades = [s["grade"] for s in students]
+result = {g: [s["name"] for s in students if s["grade"] == g] for g in grades}
+
+# 🔹 Task 17
+# 10-a bölünənlər
+
+numbers = [10, 15, 20, 25, 30]
+result = [n for n in numbers if n % 10 == 0]
+
+# 🔹 Task 18
+# 50+ bal olanlar
+
+marks = {"Ali": 45, "Veli": 75, "Aysel": 30}
+result = {k: v for k, v in marks.items() if v >= 50}
+
+# 🔹 Task 19
+# Hər hərfin indexləri
+
+letters = ["a", "b", "a", "c", "b", "a"]
+result = {l: [i for i in range(len(letters)) if letters[i] == l] for l in letters}
+
+# 🔹 Task 20
+# Qalan stok
+
+products = {"pen": 2, "book": 5}
+sold = {"pen": 1, "book": 2}
+result = {k: products[k] - sold[k] for k in products}
+
+# 🔹 Task 21
+# Ən böyük value olan key
+
+data = {"x": 10, "y": 5, "z": 20}
+result = max(data, key=data.get)
+
+# 🔹 Task 22
+# Index → rəng
+
+colors = ["red", "green", "blue"]
+result = {i: colors[i] for i in range(len(colors))}
+
+# 🔹 Task 23
+# İki dict birləşdir (topla)
+
+d1 = {"a": 2, "b": 3}
+d2 = {"b": 4, "c": 5}
+result = {k: d1.get(k, 0) + d2.get(k, 0) for k in d1 | d2}
+
+# 🔹 Task 24
+# Yalnız saitlər
+
+text = "education"
+result = {ch: text.count(ch) for ch in text if ch in "aeiou"}
+
+# 🔹 Task 25
+# Cüt ədədlərin kvadratı
+
+numbers = [1, 2, 3, 4, 5, 6]
+result = {n: n*n for n in numbers if n % 2 == 0}
+
+# Task 26
+# Value → list of keys
+
+data = {"a": 1, "b": 2, "c": 1}
+values = set(data.values())
+result = {v: [k for k in data if data[k] == v] for v in values}
+
+#  Task 27
+# Ortaq key-lər
+
+dict1 = {"a": 1, "b": 2, "c": 3}
+dict2 = {"b": 20, "c": 30, "d": 40}
+result = [k for k in dict1 if k in dict2]
+
+#  Task 28
+# Söz → uzunluq
+
+words = ["hi", "hello", "hey", "welcome"]
+result = {w: len(w) for w in words}
+
+#  Task 29
+# 0 olmayanlar
+
+values = {"a": 0, "b": 5, "c": 0, "d": 3}
+result = {k: v for k, v in values.items() if v != 0}
+
+#  Task 30
+# Ən yüksək bal alanlar
+
+scores = {"Ali": 90, "Veli": 90, "Aysel": 85}
+max_score = max(scores.values())
+result = [name for name, score in scores.items() if score == max_score]
